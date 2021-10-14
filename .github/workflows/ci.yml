@@ -1,0 +1,29 @@
+name: GitHub CI
+
+on: [pull_request, push]
+
+jobs:
+  build:
+    name: build-ci
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v2
+      - name: Setup Go
+        uses: actions/setup-go@v2
+        with:
+          go-version: 1.17
+
+      - name: Go Mod
+        run: make setup
+
+      - name: Lint
+        uses: golangci/golangci-lint-action@v2
+        with:
+          version: latest
+
+      - name: cover
+        uses: codecov/codecov-action@v1.1.0
+        with:
+          token: ${{secrets.CODECOV_TOKEN}}
+          file: ./coverage.html
+          fail_ci_if_error: true

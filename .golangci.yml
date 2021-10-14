@@ -1,0 +1,65 @@
+# running config
+run:
+#  concurrency:
+#  分析超时
+  timeout: 5m
+#  modules-download-mode: readonly
+#  默认存在多少问题退出检查
+  issue-exit-code: 1
+# 包含测试文件
+  tests: true
+#  跳过的检查目录
+  skip-dirs:
+    - bin
+  skip-dirs-use-default: true
+#  跳过的文件
+  skip-files:
+
+output:
+  format: colored-line-number
+#  输出行号
+  print-issued-lines: true
+#  输出linter名称
+  print-linter-name: true
+
+linters-settings:
+  errcheck:
+    check-type-assertions: false
+    check-blank: true
+    ignore: fmt:.*,io/ioutil:^Read.*
+  govet:
+    enable-all: true
+
+
+linters:
+  enable:
+    - bodyclose
+    - deadcode
+    - depguard
+    - dogsled
+    - errcheck
+    - gochecknoinits
+    - goconst
+    - gocritic
+    - gocyclo
+    - gofmt
+    - goimports
+    - gosec
+    - gosimple
+    - govet
+    - ineffassign
+    - interfacer
+    - misspell
+    - scopelint
+    - staticcheck
+    - typecheck
+    - unconvert
+    - unparam
+    - varcheck
+    - godox
+    - structcheck
+    - maligned
+    - goprintffuncname
+    - prealloc
+    - rowserrcheck
+    - whitespace
