@@ -1,4 +1,4 @@
-module ph_go
+module github.com/pinkhello/ph-go
 
 go 1.17
 
