@@ -1,11 +1,11 @@
 VERSION=0.0.1
-COVER_FILE=./coverage.html
+COVER_FILE=.coverage
 
 .PHONY: setup
 setup:
 	@go mod download
 
-.PHONY: fmt lint
+.PHONY: fmt
 fmt:
 	@gofmt -l -w -e .
 

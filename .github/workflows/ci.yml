@@ -13,13 +13,15 @@ jobs:
         with:
           go-version: 1.17
 
-      - name: Go Mod
-        run: make setup
-
       - name: Lint
         uses: golangci/golangci-lint-action@v2
         with:
           version: latest
+
+      - name: Test
+        run: |
+          make stepup
+          make test
 
       - name: cover
         uses: codecov/codecov-action@v1.1.0
