@@ -23,10 +23,6 @@ output:
   print-linter-name: true
 
 linters-settings:
-  errcheck:
-    check-type-assertions: false
-    check-blank: true
-    ignore: fmt:.*,io/ioutil:^Read.*
   govet:
     enable-all: true
 
