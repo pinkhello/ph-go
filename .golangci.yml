@@ -48,9 +48,8 @@ linters:
     - gosimple
     - govet
     - ineffassign
-    - interfacer
     - misspell
-    - scopelint
+    - exportloopref
     - staticcheck
     - typecheck
     - unconvert
@@ -58,7 +57,6 @@ linters:
     - varcheck
     - godox
     - structcheck
-    - maligned
     - goprintffuncname
     - prealloc
     - rowserrcheck

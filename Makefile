@@ -24,7 +24,7 @@ test:
 cover: test
 	@go tool cover -func ${COVER_FILE}
 
-coverOutput: test
+cover_output: test
 	@go tool cover -html ${COVER_FILE}
 
 
