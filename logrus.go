@@ -26,9 +26,9 @@ type (
 	}
 
 	Logger struct {
+		Log     *logrus.Logger
 		LogType string
 		LogPath string
-		Log     *logrus.Logger
 	}
 )
 
