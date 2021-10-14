@@ -20,7 +20,7 @@ jobs:
 
       - name: Test
         run: |
-          make stepup
+          make setup
           make test
 
       - name: cover
