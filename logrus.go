@@ -1,4 +1,4 @@
-package ph_go
+package phgo
 
 import (
 	"fmt"
