@@ -7,7 +7,9 @@
 go get -u github.com/pinkhello/ph-go
 ```
 
+# [Makefile](http://www.ruanyifeng.com/blog/2015/02/make.html)
 
-# makefile
 
-http://www.ruanyifeng.com/blog/2015/02/make.html
+
+
+

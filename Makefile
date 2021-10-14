@@ -1,5 +1,4 @@
-VERSION=0.0.1
-COVER_FILE=.coverage
+COVER_FILE=coverage.txt
 
 .PHONY: setup
 setup:
@@ -8,18 +7,16 @@ setup:
 .PHONY: fmt
 fmt:
 	@gofmt -l -w -e .
+	@goimports -w .
 
 .PHONY: lint
 lint:
 	@golangci-lint run ./...
 
 .PHONY: test cover cover_output
-
-TEST_PARAMS = -v -race -failfast -covermode=atomic
-
 test:
 	@git clean -fdx ${COVER_FILE}
-	@go test ${TEST_PARAMS} -coverprofile=${COVER_FILE} -coverpkg ./...
+	@go test -v -race -covermode=atomic -coverprofile=${COVER_FILE} -coverpkg ./...
 
 cover: test
 	@go tool cover -func ${COVER_FILE}
